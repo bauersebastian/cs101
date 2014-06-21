@@ -1,7 +1,7 @@
 __author__ = 'sebastian'
 
 # ##############################################
-#       Exercise by Websten from forums       #
+# Exercise by Websten from forums       #
 ###############################################
 # A palindrome is a word or a phrase that reads
 # the same backwards as forwards. Make a program
