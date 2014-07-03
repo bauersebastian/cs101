@@ -65,10 +65,3 @@ print factsmart(5)
 #>>> 120
 #print factorial(6)
 #>>> 720
-countdown = 20
-
-while True:
-    if countdown >= 0:
-        break
-    print countdown
-    countdown = countdown - 1
