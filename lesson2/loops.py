@@ -22,7 +22,7 @@ def print_numbers(end_number):
         print start_number
         start_number = start_number+1
 
-print print_numbers(255)
+print print_numbers(50)
 
 #print_numbers(3)
 #>>> 1
@@ -35,8 +35,28 @@ print print_numbers(255)
 # that number.
 
 def factorial(n):
+    loops = 1
+    result = n
 
+    if n > 0:
+        while loops < n:
+            result = result * (n-loops)
+            loops = loops + 1
+        return result
+    else:
+        result = 1
+    return result
 
+print factorial(0)
+
+def factsmart(u):
+    resultus = 1
+    while u >= 1:
+        resultus = resultus * u
+        u = u - 1
+    return resultus
+
+print factsmart(5)
 
 
 #print factorial(4)
@@ -45,3 +65,10 @@ def factorial(n):
 #>>> 120
 #print factorial(6)
 #>>> 720
+countdown = 20
+
+while True:
+    if countdown >= 0:
+        break
+    print countdown
+    countdown = countdown - 1
