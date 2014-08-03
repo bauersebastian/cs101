@@ -22,7 +22,7 @@ __author__ = 'sebastian'
 # two properties:
 
 # 1. Each column of the square contains
-#       each of the whole numbers from 1 to n exactly once.
+# each of the whole numbers from 1 to n exactly once.
 
 #   2. Each row of the square contains each
 #       of the whole numbers from 1 to n exactly once.
@@ -58,24 +58,55 @@ incorrect5 = [[1, 1.5],
               [1.5, 1]]
 
 
-def check_sudoku():
+def check_sudoku(sulist):
+    check_col = []
+    counter_col = 0
+    counter_row = 0
+    checker_col = 1
+    while counter_col + 1 <= len(sulist):
+        for suelement in sulist:
+            check_col.append(suelement[counter_col])
+            check_col.sort()
+        for colelement in check_col:
+            if colelement == checker_col:
+                checker_col += 1
+            else:
+                return False
+                brake
+        check_col = []
+        checker_col = 1
+        counter_col += 1
+
+    while counter_row + 1 <= len(sulist):
+        for suelement in sulist:
+            suelement.sort()
+            checker_row = 1
+            for su2element in suelement:
+                if su2element == checker_row:
+                    checker_row += 1
+                else:
+                    return False
+                    break
+            checker_row = 1
+            counter_row += 1
+        return True
 
 
-#print check_sudoku(incorrect)
+print check_sudoku(incorrect)
 #>>> False
 
-#print check_sudoku(correct)
+print check_sudoku(correct)
 #>>> True
 
-#print check_sudoku(incorrect2)
+print check_sudoku(incorrect2)
 #>>> False
 
-#print check_sudoku(incorrect3)
+print check_sudoku(incorrect3)
 #>>> False
 
-#print check_sudoku(incorrect4)
+print check_sudoku(incorrect4)
 #>>> False
 
-#print check_sudoku(incorrect5)
+print check_sudoku(incorrect5)
 #>>> False
 
