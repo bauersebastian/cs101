@@ -83,4 +83,5 @@ def test():
 
 # test()
 
-print daysBetweenDates(2004,7,31,2014,7,6)
+print daysBetweenDates(2008,10,13,2009,5,4)
+
