@@ -101,8 +101,23 @@ def create_data_structure(string_input):
     Creating the following data structure
     network = {'user': {'connection': [x,y,z], 'plays':[x,y,z]}
     """
+    connections = []
+    network = {}
+    user_start_pos = 0
+    while len(string_input) > 0:
+        user_end_pos = string_input.find('is connected to')
+        user = (string_input[user_start_pos:user_end_pos - 1])
+        string_input = string_input[user_end_pos:]
+        connection_end_pos = string_input.find('.')
+        connections.append(string_input[16:connection_end_pos])
+        string_input = string_input[connection_end_pos + 1:]
+        # now getting the games the users likes, adding this to the dict
+        network[user] = dict(connection=connections, plays=games)
 
     return network
+
+
+create_data_structure(example_input)
 
 # ----------------------------------------------------------------------------- #
 # Note that the first argument to all procedures below is 'network' This is the #
